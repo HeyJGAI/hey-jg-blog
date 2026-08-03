@@ -1,0 +1,190 @@
+/* Content Layout */
+.content-wrapper {
+    width: calc(100% - var(--scrollbar-width));
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+}
+
+@media (min-width: 640px) {
+    .content-wrapper {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content-wrapper {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+/* Header Layout */
+[data-name="header"] {
+    position: fixed;
+    width: calc(100% - var(--scrollbar-width));
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 73px; /* Fixed header height */
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+[data-name="header-content"] {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+[data-name="logo-section"] {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+[data-name="logo-link"] {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+[data-name="logo-image"] {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Main Content Spacing */
+[data-name="main-content"] {
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+/* Page Specific Layouts */
+[data-name="home-page"] {
+    padding-top: 73px; /* Match header height */
+}
+
+[data-name="about-page"] {
+    padding-top: 73px; /* Match header height */
+}
+
+[data-name="blog-post-page"] {
+    padding-top: 73px; /* Match header height */
+}
+
+/* Admin Pages */
+[data-name="admin-dashboard"],
+[data-name="admin-edit"],
+[data-name="admin-new"],
+[data-name="admin-about"],
+[data-name="admin-hf"] {
+    padding-top: 73px; /* Match header height */
+}
+
+/* Grid Layouts */
+.posts-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Sidebar Layout */
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .sidebar {
+        display: block;
+        width: 320px;
+        flex-shrink: 0;
+    }
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Container Spacing */
+.section-spacing {
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .section-spacing {
+        margin-bottom: 6rem;
+    }
+}
+
+/* Page Content Spacing */
+[data-name="page-content"] {
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    [data-name="page-content"] {
+        margin-top: 3rem;
+    }
+}
+
+/* Menu Overlay Positioning */
+[data-name="menu-overlay"] {
+    top: 73px; /* Match header height */
+    height: calc(100vh - 73px); /* Full viewport height minus header */
+    width: calc(100% - var(--scrollbar-width));
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+/* Fixed Container */
+.fixed-container {
+    width: calc(100% - var(--scrollbar-width));
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* Transition Container */
+.transition-container {
+    position: relative;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+/* Header Wrapper */
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    width: calc(100% - var(--scrollbar-width));
+}

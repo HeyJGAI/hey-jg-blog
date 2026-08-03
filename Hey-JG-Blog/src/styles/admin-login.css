@@ -1,0 +1,124 @@
+/* Admin Login Page Specific Styles */
+[data-name="admin-login"] {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+}
+
+/* Input Field Base Styles */
+.login-input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    background: transparent !important;
+    width: 8ch;
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    caret-color: rgba(0, 0, 0, 0.8);
+    -webkit-text-fill-color: currentColor !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    transition: none !important;
+}
+
+/* Input Placeholder Styles */
+.login-input::placeholder {
+    opacity: 0.4;
+    color: inherit;
+    font-weight: inherit;
+    transition: opacity 0.3s ease;
+    -webkit-text-fill-color: currentColor !important;
+}
+
+.login-input:focus::placeholder {
+    opacity: 0.2;
+}
+
+/* Remove Autofill Styles */
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover,
+.login-input:-webkit-autofill:focus,
+.login-input:-webkit-autofill:active {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: currentColor !important;
+    transition: none !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    background: none !important;
+    font-size: inherit !important;
+}
+
+/* Content Layout */
+[data-name="login-content"] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Error Message Animation */
+[data-name="error-message"] {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(4px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Loading Spinner Animation */
+.fa-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    [data-name="login-content"],
+    [data-name="error-message"] {
+        transition: none;
+    }
+
+    .fa-spin {
+        animation: none;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+    [data-name="login-content"] {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .login-input {
+        font-size: inherit;
+    }
+}
+
+/* Microsoft Edge and IE Specific Styles */
+@supports (-ms-ime-align: auto) {
+    .login-input {
+        background: transparent !important;
+        color: currentColor !important;
+    }
+}
+
+/* Firefox Specific Styles */
+.login-input:-moz-autofill {
+    background: transparent !important;
+    color: currentColor !important;
+}
