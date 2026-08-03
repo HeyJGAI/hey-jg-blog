@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* All @import rules MUST come before any other CSS rule (including
+   @tailwind directives) — browsers silently drop every @import that
+   appears after a non-import rule, per the CSS spec. */
 
 /* Self-hosted font (bundled by Vite) — replaces the old fonts.googleapis.com
    request for "Google Sans", which isn't actually a public Google Font and
@@ -19,3 +19,7 @@
 @import './styles/components.css';
 @import './styles/layout.css';
 @import './styles/admin-login.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
