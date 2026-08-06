@@ -83,7 +83,7 @@ function AdminHeader({ activeSection }) {
                 </div>
 
                 <div 
-                    className={`fixed inset-0 bg-black transition-all duration-500 ease-in-out ${
+                    className={`fixed inset-0 bg-black transition-all duration-500 ease-in-out overflow-y-auto ${
                         menuOpen 
                             ? 'opacity-95 pointer-events-auto' 
                             : 'opacity-0 pointer-events-none'
@@ -91,7 +91,7 @@ function AdminHeader({ activeSection }) {
                     style={{ marginTop: '73px' }}
                     data-name="menu-overlay"
                 >
-                    <div className="h-full flex items-center justify-center" data-name="menu-content">
+                    <div className="min-h-full flex items-center justify-center py-12" data-name="menu-content">
                         <nav 
                             className={`flex flex-col items-center justify-center w-full px-4 transition-all duration-500 ease-in-out ${
                                 menuOpen ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-4'
