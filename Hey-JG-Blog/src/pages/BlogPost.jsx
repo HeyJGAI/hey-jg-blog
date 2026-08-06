@@ -169,7 +169,7 @@ function BlogPost() {
                             <header className="mb-12">
                                 <div className="flex items-center gap-2 text-sm mb-8">
                                     <span className="text-gray-500">
-                                        {new Date(post.createdAt).toLocaleDateString('en-US', {
+                                        {new Date(post.objectData.createdAt).toLocaleDateString('en-US', {
                                             year: 'numeric',
                                             month: 'long',
                                             day: 'numeric'
