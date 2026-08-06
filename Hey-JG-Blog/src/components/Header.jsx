@@ -63,16 +63,18 @@ function Header({ isAdmin }) {
                     {/* Tri-bar Menu Button */}
                     <button 
                         onClick={() => setMenuOpen(!menuOpen)}
-                        className="flex flex-col justify-center items-end space-y-3 group z-50 h-full px-4"
+                        className="relative flex items-center justify-center group z-50 h-full px-4 w-12"
                         aria-label="Toggle menu"
                         data-name="tri-bar-button"
                     >
-                        <span className={`block h-[0.25rem] bg-black transition-all duration-300 ease-out ${
-                            menuOpen ? 'w-8 -rotate-45 translate-y-3' : 'w-8'
-                        }`}></span>
-                        <span className={`block h-[0.25rem] bg-black transition-all duration-300 ease-out ${
-                            menuOpen ? 'w-8 rotate-45 -translate-y-0' : 'w-8'
-                        }`}></span>
+                        <span className="relative block w-8 h-5">
+                            <span className={`absolute left-0 top-0 block h-[0.25rem] w-8 bg-black transition-all duration-300 ease-out ${
+                                menuOpen ? 'translate-y-[0.5rem] rotate-45' : 'translate-y-0 rotate-0'
+                            }`}></span>
+                            <span className={`absolute left-0 bottom-0 block h-[0.25rem] w-8 bg-black transition-all duration-300 ease-out ${
+                                menuOpen ? '-translate-y-[0.5rem] -rotate-45' : 'translate-y-0 rotate-0'
+                            }`}></span>
+                        </span>
                     </button>
 
                     {/* Full Screen Menu */}
