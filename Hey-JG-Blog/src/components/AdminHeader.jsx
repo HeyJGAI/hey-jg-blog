@@ -98,12 +98,12 @@ function AdminHeader({ activeSection }) {
                             }`} 
                             data-name="menu-nav"
                         >
-                            <div className="space-y-8 md:space-y-12 w-full max-w-lg">
+                            <div className="space-y-4 md:space-y-6 w-full max-w-lg">
                                 {menuItems.map((item, index) => (
                                     <div key={item.section} className="text-center">
                                         <a
                                             href={item.href}
-                                            className={`relative inline-block text-4xl sm:text-5xl md:text-7xl transition-all duration-300 font-extralight tracking-wide ${
+                                            className={`relative inline-block text-2xl sm:text-3xl md:text-4xl transition-all duration-300 font-extralight tracking-wide ${
                                                 activeSection === item.section
                                                     ? 'text-[#E2FF00]'
                                                     : 'text-white hover:text-white/80'
@@ -114,14 +114,14 @@ function AdminHeader({ activeSection }) {
                                             {item.label}
                                         </a>
                                         {index < menuItems.length - 1 && (
-                                            <div className="h-px w-16 bg-gray-800 mx-auto mt-8 md:mt-12"></div>
+                                            <div className="h-px w-16 bg-gray-800 mx-auto mt-4 md:mt-6"></div>
                                         )}
                                     </div>
                                 ))}
-                                <div className="text-center pt-8 md:pt-12 border-t border-gray-800">
+                                <div className="text-center pt-4 md:pt-6 border-t border-gray-800">
                                     <button
                                         onClick={handleLogout}
-                                        className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-wide text-red-400 hover:text-red-300 transition-colors"
+                                        className="text-2xl sm:text-3xl md:text-4xl font-extralight tracking-wide text-red-400 hover:text-red-300 transition-colors"
                                         style={{ fontWeight: 200 }}
                                         data-name="menu-item-logout"
                                     >
