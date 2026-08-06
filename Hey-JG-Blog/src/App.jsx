@@ -8,7 +8,6 @@ import About from './pages/About';
 import Coffee from './pages/Coffee';
 import BlogPost from './pages/BlogPost';
 import Admin from './pages/Admin';
-import Design from './pages/Design';
 import { reportError } from './lib/errorReporter';
 import { isAuthenticated as checkSession, logout, onAuthStateChange } from './lib/auth';
 
@@ -59,8 +58,6 @@ function App() {
             content = <Home />;
         } else if (path.startsWith('/post/')) {
             content = <BlogPost />;
-        } else if (path === '/admin/design' || path === '/design') {
-            content = <Design />;
         } else if (path.startsWith('/admin')) {
             // Every /admin* route (including /admin/about and /admin/hf) goes
             // through Admin, which is the one place that checks the login gate.
