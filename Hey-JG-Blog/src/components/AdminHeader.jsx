@@ -45,8 +45,7 @@ function AdminHeader({ activeSection }) {
             { label: 'Write', href: '/admin/new', section: 'write' },
             { label: 'Manage', href: '/admin', section: 'manage' },
             { label: 'About Me', href: '/admin/about', section: 'about' },
-            { label: 'HF Section', href: '/admin/hf', section: 'hf' },
-            { label: 'Design System', href: '/admin/design', section: 'design' }
+            { label: 'HF Section', href: '/admin/hf', section: 'hf' }
         ];
 
         return (
@@ -102,7 +101,7 @@ function AdminHeader({ activeSection }) {
                             <div className="space-y-8 md:space-y-12 w-full max-w-lg">
                                 {menuItems.map((item, index) => (
                                     <div key={item.section} className="text-center">
-                                        <a
+                                        
                                             href={item.href}
                                             className={`relative inline-block text-4xl sm:text-5xl md:text-7xl transition-all duration-300 font-extralight tracking-wide ${
                                                 activeSection === item.section
