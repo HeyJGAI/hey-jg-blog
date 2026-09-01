@@ -1,0 +1,366 @@
+/* Base Styles */
+:root {
+    --scrollbar-width: 0px;
+}
+
+@supports (scrollbar-gutter: stable) {
+    body {
+        scrollbar-gutter: stable;
+    }
+}
+
+@supports not (scrollbar-gutter: stable) {
+    :root {
+        --scrollbar-width: calc(100vw - 100%);
+    }
+    
+    body {
+        margin-right: var(--scrollbar-width);
+        overflow-y: scroll;
+    }
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-y: scroll;
+    min-height: 100vh;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Mobile-first Typography */
+.text-scale-h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.text-scale-h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.text-scale-h3 {
+    font-size: 24px;
+    line-height: 1.3;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.text-scale-body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Desktop Typography */
+@media (min-width: 768px) {
+    .text-scale-h1 {
+        font-size: 64px;
+    }
+
+    .text-scale-h2 {
+        font-size: 56px;
+    }
+
+    .text-scale-h3 {
+        font-size: 48px;
+    }
+
+    .text-scale-body {
+        font-size: 18px;
+    }
+}
+
+/* Blog Post Content Styles */
+[data-name="blog-post-page"] .blog-content {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #1a1a1a;
+}
+
+[data-name="blog-post-page"] .blog-content p {
+    margin-bottom: 1.5em;
+    letter-spacing: -0.003em;
+}
+
+[data-name="blog-post-page"] .blog-content h1 {
+    font-size: 2.5em;
+    margin: 1.5em 0 0.5em;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+[data-name="blog-post-page"] .blog-content h2 {
+    font-size: 2em;
+    margin: 1.5em 0 0.5em;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+[data-name="blog-post-page"] .blog-content h3 {
+    font-size: 1.5em;
+    margin: 1.5em 0 0.5em;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+[data-name="blog-post-page"] .blog-content ul,
+[data-name="blog-post-page"] .blog-content ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+}
+
+[data-name="blog-post-page"] .blog-content li {
+    margin: 0.5em 0;
+    line-height: 1.6;
+}
+
+[data-name="blog-post-page"] .blog-content blockquote {
+    border-left: 4px solid #E2FF00;
+    padding-left: 1.5em;
+    margin: 2em 0;
+    font-style: italic;
+    color: #4a5568;
+}
+
+[data-name="blog-post-page"] .blog-content code {
+    background-color: #f7fafc;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+[data-name="blog-post-page"] .blog-content pre {
+    background-color: #f7fafc;
+    padding: 1.5em;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+[data-name="blog-post-page"] .blog-content pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+[data-name="blog-post-page"] .blog-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5em 0;
+}
+
+/* Updated Link Styles for Blog Content */
+[data-name="blog-post-page"] .blog-content a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+[data-name="blog-post-page"] .blog-content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E2FF00;
+    transition: all 0.3s ease;
+}
+
+[data-name="blog-post-page"] .blog-content a:hover {
+    background-color: #E2FF00;
+    color: #000000;
+}
+
+/* About Page Styles */
+[data-name="about-page"] .prose {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 30px;
+    line-height: 1.4;
+    color: white;
+}
+
+@media (min-width: 640px) {
+    [data-name="about-page"] .prose {
+        font-size: 74px;
+        line-height: 1.2;
+    }
+}
+
+[data-name="about-page"] .prose p {
+    margin-bottom: 1.5em;
+}
+
+/* Updated Link Styles for About Page */
+[data-name="about-page"] .prose a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+[data-name="about-page"] .prose a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E2FF00;
+    transition: all 0.3s ease;
+}
+
+[data-name="about-page"] .prose a:hover {
+    background-color: #E2FF00;
+    color: #000000;
+}
+
+[data-name="about-page"] .prose strong {
+    color: #E2FF00;
+    font-weight: 600;
+}
+
+[data-name="about-page"] .prose blockquote {
+    border-left-color: #E2FF00;
+    color: white;
+    opacity: 0.8;
+    font-style: italic;
+    padding-left: 2em;
+    margin: 2em 0;
+}
+
+[data-name="about-page"] .prose ul,
+[data-name="about-page"] .prose ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+}
+
+[data-name="about-page"] .prose li {
+    margin: 0.5em 0;
+}
+
+/* Info Section Styles */
+[data-name="about-page"] .info-content {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+    text-align: left;
+}
+
+[data-name="about-page"] .info-content p {
+    margin-bottom: 1em;
+}
+
+/* Updated Link Styles for Info Content */
+[data-name="about-page"] .info-content a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+[data-name="about-page"] .info-content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E2FF00;
+    transition: all 0.3s ease;
+}
+
+[data-name="about-page"] .info-content a:hover {
+    background-color: #E2FF00;
+    color: #000000;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Updated Global Link Styles */
+a.custom-link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+a.custom-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E2FF00;
+    transition: all 0.3s ease;
+}
+
+a.custom-link:hover {
+    background-color: #E2FF00;
+    color: #000000;
+}
+
+/* Dark Background Link Styles */
+.dark-bg a.custom-link {
+    color: #ffffff;
+}
+
+.dark-bg a.custom-link:hover {
+    color: #000000;
+}
+
+/* Light Background Link Styles */
+.light-bg a.custom-link {
+    color: #000000;
+}
+
+.light-bg a.custom-link:hover {
+    color: #000000;
+}
+
+/* Page Transition Styles */
+.page-transition {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-transition.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Menu Overlay Transition */
+[data-name="menu-overlay"] {
+    width: calc(100% - var(--scrollbar-width));
+}
+
+/* Fixed Width Container */
+.fixed-width-container {
+    width: calc(100% - var(--scrollbar-width));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Prevent Content Jump */
+html {
+    overflow-y: scroll;
+    scrollbar-width: stable;
+}
