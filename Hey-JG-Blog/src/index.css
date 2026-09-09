@@ -1,4 +1,4 @@
-/* Self-hosted font (bundled by Vite) — replaces the old fonts.googleapis.com
+﻿/* Self-hosted font (bundled by Vite) — replaces the old fonts.googleapis.com
    request for "Google Sans", which isn't actually a public Google Font and
    was silently failing to load in the original build. */
 @import '@fontsource/plus-jakarta-sans/400.css';
@@ -19,4 +19,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
