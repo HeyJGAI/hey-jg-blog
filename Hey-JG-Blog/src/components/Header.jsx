@@ -91,23 +91,18 @@ function Header({ isAdmin }) {
                             data-name="menu-nav"
                         >
                             <div className="space-y-8">
-                                <a 
-                                    href="/"
-                                    className={`block text-5xl md:text-7xl font-extralight tracking-wide transition-colors ${
-                                        activeRoute === '/' 
-                                            ? 'text-[#E2FF00]' 
-                                            : 'text-white hover:text-gray-200'
-                                    }`}
-                                    onClick={() => setMenuOpen(false)}
+                                <span
+                                    className="block text-5xl md:text-7xl font-extralight tracking-wide text-white/30 cursor-not-allowed select-none"
+                                    title="Coming soon"
                                     data-name="menu-blog"
                                 >
                                     Blog
-                                </a>
+                                </span>
                                 <div className="h-px w-16 bg-gray-800 mx-auto"></div>
                                 <a 
                                     href="/about"
                                     className={`block text-5xl md:text-7xl font-extralight tracking-wide transition-colors ${
-                                        activeRoute === '/about' 
+                                        (activeRoute === '/about' || activeRoute === '/')
                                             ? 'text-[#E2FF00]' 
                                             : 'text-white hover:text-gray-200'
                                     }`}

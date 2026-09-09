@@ -54,8 +54,13 @@ function App() {
         };
 
         let content;
-        if (path === '/') {
-            content = <Home />;
+        if (path === '/' || path === '/about') {
+            // Blog is temporarily marked "Coming soon" in the nav, so the root
+            // path now shows the About page instead of the blog listing.
+            // Home.jsx is unused for now — restore `path === '/' -> <Home />`
+            // as its own branch (and drop '/' from this condition) once Blog
+            // is re-enabled.
+            content = <About />;
         } else if (path.startsWith('/post/')) {
             content = <BlogPost />;
         } else if (path.startsWith('/admin')) {
@@ -64,8 +69,6 @@ function App() {
             // The old build special-cased /admin/about to skip that gate entirely
             // — anyone who knew the URL could edit the About page with no login.
             content = <Admin />;
-        } else if (path === '/about') {
-            content = <About />;
         } else if (path === '/coffee') {
             content = <Coffee />;
         } else {
